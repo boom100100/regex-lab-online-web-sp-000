@@ -37,15 +37,20 @@ end
 
 def valid_phone_number?(phone)
   finalArray = []
+  numberOfDigits = 0
   phone = phone.scan(/\d+/)
   phone.each do |number|
-    finalArray << number
+    finalArray << number.length
   end
 
-  if finalArray.length == 10
+  finalArray.each do |numLen|
+    numberOfDigits = numberOfDigits + numLen
+  end
+
+  if numberOfDigits == 10
     return true
   else
     return false
   end
-  
+
 end
