@@ -36,5 +36,16 @@ def first_word_capitalized_and_ends_with_punctuation?(text)
 end
 
 def valid_phone_number?(phone)
+  finalArray = []
+  phone = phone.scan(/\d+/)
+  phone.each do |number|
+    finalArray << number
+  end
 
+  if finalArray.length == 10
+    return true
+  else
+    return false
+  end
+  
 end
